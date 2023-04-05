@@ -3,10 +3,7 @@ package sit.int204.classicmodelservice.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sit.int204.classicmodelservice.dtos.PageDTO;
 import sit.int204.classicmodelservice.entities.Customer;
 import sit.int204.classicmodelservice.dtos.SimpleCustomerDTO;
@@ -40,5 +37,10 @@ public class CustomerController {
     @GetMapping("/{customerNumber}")
     public SimpleCustomerDTO getSimpleCustomerById(@PathVariable Integer customerNumber) {
         return modelMapper.map(customerService.getCustomerById(customerNumber), SimpleCustomerDTO.class);
+    }
+
+    @PostMapping("")
+    public Customer createCustomer(@RequestBody Customer customer) {
+        return customerService.createCustomer(customer);
     }
 }

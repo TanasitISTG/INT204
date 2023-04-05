@@ -27,4 +27,8 @@ public class CustomerService {
     public Page<Customer> getCustomersByPage(Integer page, Integer size) {
         return customerRepository.findAll(PageRequest.of(page, size));
     }
+
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.saveAndFlush(customer);
+    }
 }
