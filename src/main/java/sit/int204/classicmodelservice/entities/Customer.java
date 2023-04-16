@@ -30,4 +30,5 @@ public class Customer {
     private Employee salesRepEmployeeNumber;
     private Double creditLimit;
     private String password;
+    private String username;
 }

@@ -4,10 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import sit.int204.classicmodelservice.properties.FileStorageProperties;
+import sit.int204.classicmodelservice.properties.JwtProperties;
 
 @SpringBootApplication
 @EnableConfigurationProperties({
-        FileStorageProperties.class
+        FileStorageProperties.class,
+        JwtProperties.class
 })
 public class ClassicmodelServiceApplication {
 

@@ -20,6 +20,7 @@ public class CustomerService {
         return customerRepository.findById(customerNumber).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer ID: " + customerNumber + " not found"));
     }
 
+
     public List<Customer> getCustomers() {
         return customerRepository.findAll();
     }
